@@ -1,6 +1,10 @@
     """
-    Recursion is the function that call itself to breakdown the problem for solving
+    Key Concepts:
+    - Base Case: The condition under which the recursion ends.
+    - Recursive Case: The part where the function calls itself with a smaller problem.
+    - Stack Memory: Each recursive call is added to the call stack.
     """
+
     #Structure of recursion
     def recursion_function(parameters):
         if base_case:
