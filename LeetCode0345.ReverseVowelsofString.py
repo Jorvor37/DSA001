@@ -38,3 +38,44 @@ class Solution:
             else:
                 first += 1
         return "".join(s)
+
+
+"""
+Q: Given a string s, reverse only all the vowels in the string and return it.
+I re-solve this question again by use diffrent approach to make it use less time complexity
+1. Create set of vowels incliude vowels in Upper and Lower case.
+2. Use the same loop logic to loop until first < last
+3. Create 2 more loop to move index first and last depends on whether it in vowels or not
+4. Then swap when everything in place
+
+Runtime
+7
+ms
+Beats
+89.42%
+
+Memory
+18.46
+MB
+Beats
+91.25%
+
+"""
+
+class Solution:
+    def reverseVowels(self, s: str) -> str:
+        vowels = set("aeiouAEIOU")
+        s = list(s)
+        first, last = 0, len(s) - 1
+
+        while first < last:
+            while first < last and s[first] not in vowels:
+                first += 1
+            while first < last and s[last] not in vowels:
+                last -= 1
+            s[first], s[last] = s[last], s[first]
+            first += 1
+            last -= 1
+
+        return "".join(s)
+
