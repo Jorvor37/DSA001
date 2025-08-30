@@ -5,6 +5,19 @@ Firstly I solve ethis problem in-correctly by using simple if else condition whe
 2. Then check one by one if n less than equal to i_num, we find lowest number and continue
 3. So now we have lowest i number then we do it again with j number, with this two we always have i as lowest amongs this trio and j as second lowest among this trio.
 4. If we can find 3rd number that nomt rewrite the i or j, we now find the highest number among them.
+
+Runtime
+16
+ms
+Beats
+48.67%
+
+Memory
+37.47
+MB
+Beats
+65.18%
+
 """
 
 class Solution:
