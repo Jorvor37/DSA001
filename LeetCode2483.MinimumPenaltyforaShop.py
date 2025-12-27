@@ -16,8 +16,20 @@ class Solution:
                 min_index = i
         return min_index
 
-
+"""
 #fixed version
+Runtime
+611
+ms
+Beats
+5.00%
+Analyze Complexity
+Memory
+25.64
+MB
+Beats
+14.20%
+"""
 class Solution:
     def bestClosingTime(self, customers: str) -> int:
         n = len(customers)
@@ -40,3 +52,32 @@ class Solution:
                 min_penalty = penalty
                 min_index = i
         return min_index
+"""
+# Best version Runtime
+47
+ms
+Beats
+80.70%
+Analyze Complexity
+Memory
+17.85
+MB
+Beats
+98.10%
+"""
+class Solution:
+    def bestClosingTime(self, customers: str) -> int:
+        penalty = customers.count('Y')  # initial close at 0
+        min_penalty = penalty
+        best = 0
+        i = 0
+        for c in customers:
+            if c == 'Y':
+                penalty -= 1
+            else:
+                penalty += 1
+            i += 1
+            if penalty < min_penalty:
+                min_penalty = penalty
+                best = i
+        return best
